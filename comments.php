@@ -21,7 +21,8 @@ if ( post_password_required() )
 	return;
 ?>
 
-<div>
+<div class="row">
+	<div class="large-12 medium-12 columns">
 
 	<?php if ( have_comments() ) : ?>
 	<hr>
@@ -60,4 +61,5 @@ if ( post_password_required() )
 	</div>
 	<?php endif; ?>
 
-</div><!-- #comments .comments-area -->
+	</div><!-- .columns -->
+</div><!-- .row -->
