@@ -7,7 +7,7 @@
  *
  * @package WordPress
  * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 4.0
+ * @since Foundation, for WordPress 5.0
  */
 
 /**
@@ -73,12 +73,15 @@ function foundation_assets() {
 		// Load JavaScripts
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', null, '4.0', true );
 		wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/vendor/custom.modernizr.js', null, '2.1.0');
+		wp_enqueue_script( 'jquery', get_template_directory_uri().'/js/vendor/jquery.js', null, '2.1.0');
+		
 		if ( is_singular() ) wp_enqueue_script( "comment-reply" );
-
+		
 		// Load Stylesheets
 		wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css' );
 		wp_enqueue_style( 'foundation', get_template_directory_uri().'/css/foundation.min.css' );
-		wp_enqueue_style( 'app', get_stylesheet_uri(), array('foundation') );
+		wp_enqueue_style( 'style', get_stylesheet_uri(), array('foundation') );
+		wp_enqueue_style( 'app', get_template_directory_uri().'/css/app.css' );
 
 		// Load Google Fonts API
 		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300' );
@@ -111,19 +114,15 @@ endif;
  * @see: http://foundation.zurb.com/docs/javascript.html
  */
 
-if ( ! function_exists( 'foundation_comptability' ) ) :
+if ( ! function_exists( 'foundation_compatibility' ) ) :
 
-function foundation_comptability () {
+function foundation_compatibility () {
 
-echo "<script>";
-echo "document.write('<script src=' +";
-echo "('__proto__' in {} ? '" . get_template_directory_uri() . "/js/vendor/zepto" . "' : '" . get_template_directory_uri() . "/js/vendor/jquery" . "') +";
-echo "'.js><\/script>')";
-echo "</script>";
+//echo '<script src="'.get_template_directory_uri().'/js/vendor/jquery.js"></script>';
 
 }
 
-add_action('wp_footer', 'foundation_comptability', 10);
+add_action('wp_footer', 'foundation_compatibility', 10);
 
 endif;
 
@@ -196,25 +195,28 @@ function display_element( $element, &$children_elements, $max_depth, $depth=0, $
 
 if ( ! function_exists( 'foundation_pagination' ) ) :
 
-function foundation_pagination() {
+function foundation_pagination($this_query=null) {
 
-global $wp_query;
+if(!is_object($this_query)) {
+	global $wp_query;
+	$this_query = $wp_query;
+}
 
 $big = 999999999;
 
-$links = paginate_links( array(
+$pagination = paginate_links( array(
 	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 	'format' => '?paged=%#%',
 	'prev_next' => true,
 	'prev_text' => '&laquo;',
 	'next_text' => '&raquo;',
 	'current' => max( 1, get_query_var('paged') ),
-	'total' => $wp_query->max_num_pages,
+	'total' => $this_query->max_num_pages,
 	'type' => 'list'
 )
 );
 
-$pagination = str_replace('page-numbers','pagination',$links);
+$pagination = str_replace('page-numbers','pagination',$pagination);
 
 echo $pagination;
 
