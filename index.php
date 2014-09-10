@@ -11,7 +11,10 @@
 
 get_header(); ?>
 
-    <!-- Main Content -->
+
+<div class="row">
+
+	<!-- Main Content -->
     <div class="large-9 medium-8 columns" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -29,8 +32,11 @@ get_header(); ?>
 
 		<?php foundation_pagination(); ?>
 
-    </div>
-    <!-- End Main Content -->
+    </div><!-- columns main -->
+	 <!-- End Main Content -->
 
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
+    
+</div><!-- row -->
+
 <?php get_footer(); ?>

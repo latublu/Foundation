@@ -10,7 +10,6 @@
  */
 ?>
 
-</div>
 <!-- End Page -->
 
 <!-- Footer -->

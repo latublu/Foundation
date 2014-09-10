@@ -5,7 +5,10 @@
  */
 
 get_header(); ?>
-<?php get_sidebar(); ?>
+
+<div class="row">
+
+	<?php get_sidebar(); ?>
 
     <!-- Main Content -->
     <div class="large-9 medium-8 columns" role="content">
@@ -18,7 +21,9 @@ get_header(); ?>
 			
 		<?php endif; ?>
 
-    </div>
+    </div><!-- columns content -->
     <!-- End Main Content -->
+   
+</div><!-- row -->
 
 <?php get_footer(); ?>

@@ -6,7 +6,10 @@
 
 get_header(); ?>
 
-    <!-- Main Content -->
+<!-- Main Content -->
+
+<div class="row">
+
     <div class="large-12 medium-12 columns" role="content">
 
 		<?php if ( have_posts() ) : ?>
@@ -17,7 +20,10 @@ get_header(); ?>
 			
 		<?php endif; ?>
 
-    </div>
-    <!-- End Main Content -->
+    </div><!-- columns content -->
+    
+</div><!-- row -->
+
+<!-- End Main Content -->
 
 <?php get_footer(); ?>
