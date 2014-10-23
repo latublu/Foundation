@@ -1,0 +1,407 @@
+
+/* -----------------------------------------
+   Body
+----------------------------------------- */
+
+body {
+	background-color: #fff;
+	color: #848484;
+	font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+	font-style: normal;
+	font-weight: 300;
+}
+
+/* -----------------------------------------
+   Type
+----------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+ 	margin-top: 0;
+    margin-bottom: 1.0rem;
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	color: #4c4c4c;
+	font-weight: 700;
+	line-height: 1.2;
+	/*
+	text-transform: uppercase;
+	*/
+}
+
+
+/* -----------------------------------------
+   Anchors
+----------------------------------------- */
+
+a {
+	text-decoration: none; 
+	color: inherit; 
+	-webkit-transition: color 0.2s linear; 
+	-moz-transition: color 0.2s linear; 
+	transition: color 0.2s linear;
+}
+a:hover,
+a:active {
+	text-decoration: underline; 
+	color: #008cba; 
+	-webkit-transition: color 0.2s linear; 
+	-moz-transition: color 0.2s linear; 
+	transition: color 0.2s linear;
+}
+a.white {
+	text-decoration: none; 
+	color: #fff; 
+	-webkit-transition: color 0.2s linear; 
+	-moz-transition: color 0.2s linear; 
+	transition: color 0.2s linear;
+}
+a.white:hover,
+a.white:active {
+	text-decoration: none; 
+	color: #fff; 
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	filter:alpha(opacity=80);
+	-webkit-transition: color 0.2s linear; 
+	-moz-transition: color 0.2s linear; 
+	transition: color 0.2s linear;
+}
+a > img:hover,
+a > img:active {
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+.th a > img:hover,
+.th a > img:active {
+	opacity: 1;
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	filter:alpha(opacity=100);
+}
+
+/* -----------------------------------------
+   Structure
+----------------------------------------- */
+
+.clearfix {
+	clear: both;
+}
+
+.row {
+	margin: 0 auto;
+	max-width: 1024px
+}
+
+footer.row {
+	margin: 0;
+	max-width: 100%;
+	width: 100%;
+}
+
+.columns {
+
+}
+
+/* -----------------------------------------
+   Header
+----------------------------------------- */
+
+#top-banner > .columns {
+	padding-top: 1.0rem;
+	padding-bottom: 0;
+}
+#top-banner .banner {
+
+}
+#top-banner .banner p {
+	margin-bottom: 1.0rem;
+}
+#top-banner .banner p:last-child {
+	margin-bottom: 0;
+}
+
+.site-header {
+    margin: 0;
+    padding: 1.0rem 0;
+    border-bottom: none;
+}
+.site-header h1 {
+	margin-bottom: 0;
+    margin-top: 0;
+    font-size: 2.25rem;
+}
+
+/* -----------------------------------------
+   Nav
+----------------------------------------- */
+
+.inline-container > ul, 
+.inline-list {
+	margin: 0 auto 1.0625rem auto;
+	margin-left: -1.375rem;
+	margin-right: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden; 
+}
+.inline-container > ul > li, 
+.inline-list > li {
+	list-style: none;
+	float: left;
+	margin-left: 1.375rem;
+	display: block; 
+}
+.inline-container > ul > li > *, 
+.inline-list > li > * {
+	display: block; 
+}
+
+ul.menu {
+    margin-left: 0;
+	list-style-position: outside;
+	overflow: hidden;
+}
+ul.menu > li {
+    margin: 0 1.375rem 1.0rem 0;
+    list-style: none outside none;
+    display: block;
+    float: left;
+}
+ul.menu > li:last-child {
+    margin-bottom: 0;
+}
+ul.menu > li > a {
+	font-weight: 400;
+}
+
+ul.menu.header {
+	margin-top: 1.0rem;
+	margin-bottom: 0;
+}
+ul.menu.header > li {
+	
+}
+ul.menu.header > li > a {
+	font-weight: 400;
+}
+
+.top-bar {
+	background-color: #686868;
+}
+.top-bar.expanded .title-area {
+  background: #686868; 
+}
+.top-bar-section ul {
+	background: #686868;
+}
+.top-bar-section ul li > a {
+	background: #686868; 
+    border-left: none;
+    border-right: none;
+    font-size: 1.0rem;
+}
+.top-bar-section ul li:not(.has-form) a:not(.button) {
+	background: #686868; 
+}
+.top-bar-section ul li:hover:not(.has-form) > a {
+	background: #787878;
+	text-decoration: underline;
+}
+.top-bar-section li.hover > a:not(.button) {
+  background: #787878;
+  text-decoration: underline;
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+  background: #787878;
+  text-decoration: underline;
+}
+
+.breadcrumbs {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0.5625rem 0;
+    list-style: none outside none;
+    display: block;
+    overflow: hidden;
+}
+.breadcrumbs > * {
+    font-size: 1.0rem;
+}
+      
+/* -----------------------------------------
+   Footer
+----------------------------------------- */
+
+footer.row > .columns {
+	border-top: 1px solid #a2a2a2;
+	padding-top: 0.125rem;
+}
+
+footer.row #footer-content.row {
+	background: #686868; 
+	color: #fff;
+}
+footer.row #footer-content.row > .columns {
+	padding: 2.0rem 3.0rem;
+}
+footer.row #footer-content.row a {
+	color: #fff;
+}
+footer.row #footer-content.row a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+footer.row #footer-content.row p {
+	color: #fff;
+}
+footer.row #footer-content.row .copyright p {
+	font-size: 0.8rem;
+	text-align: right;
+}
+      
+/* -----------------------------------------
+   Aside, Sidebar
+----------------------------------------- */
+
+aside.sidebar > div {
+    text-align: left;
+}
+
+aside.sidebar ul {
+    margin-left: 0;
+}
+aside.sidebar ul li {
+    padding-bottom: 0.375rem;
+    line-height: 1.2;
+}
+
+/* -----------------------------------------
+   Media Queries
+----------------------------------------- */
+
+/* small screens */
+@media only screen { 
+
+	/* -----------------------------------------
+	   Nav
+	----------------------------------------- */
+	
+	ul.menu > li {
+    	margin: 0 0 1.0rem 0;
+		clear: both;
+    	float: none;
+		text-align: center;
+	}
+	  
+	/* -----------------------------------------
+	   Footer
+	----------------------------------------- */
+	
+	footer.row #footer-content.row > .columns:nth-child(1n+0) {
+		padding-bottom: 1.0rem;
+	}
+	
+	footer.row #footer-content.row > .columns:nth-child(2n+0) {
+		padding-top: 1.0rem;
+	}
+	
+	footer.row #footer-content.row .copyright p {
+		font-size: 0.8rem;
+		text-align: center;
+	}
+  
+	/* -----------------------------------------
+	Aside, Sidebar
+	----------------------------------------- */
+
+	aside.sidebar {
+		margin-top: 1.0rem;
+		border-top: 1px solid #d3d3d3;
+		padding-top: 2.0rem;
+	}
+
+	aside.sidebar > div {
+		text-align: center;
+	}
+
+} 
+
+/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (max-width: 40em) { 
+} 
+
+/* min-width 641px, medium screens */
+@media only screen and (min-width: 40.063em) {
+ 
+	/* -----------------------------------------
+	   Nav
+	----------------------------------------- */
+	
+	ul.menu > li {
+    	margin: 0 1.375rem 1.0rem 0;
+		clear: none;
+    	float: left;
+	}
+	  
+	/* -----------------------------------------
+	   Footer
+	----------------------------------------- */
+	
+	footer.row #footer-content.row > .columns:nth-child(1n+0) {
+		padding-bottom: 2.0rem;
+	}
+	
+	footer.row #footer-content.row > .columns:nth-child(2n+0) {
+		padding-top: 2.0rem;
+	}
+	
+	footer.row #footer-content.row .copyright p {
+		font-size: 0.8rem;
+		text-align: right;
+	}
+ 
+	/* -----------------------------------------
+	Aside, Sidebar
+	----------------------------------------- */
+
+	aside.sidebar {
+		margin-top: 0;
+		border-top: none;
+		padding-top: 0;
+	}
+
+	aside.sidebar > div {
+		text-align: left;
+	}
+
+} 
+
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+} 
+
+/* min-width 1025px, large screens */
+@media only screen and (min-width: 64.063em) { 
+}
+
+/* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { 
+}
+
+/* min-width 1441px, xlarge screens */
+@media only screen and (min-width: 90.063em) { 
+}
+
+/* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { 
+} 
+
+/* min-width 1921px, xxlarge screens */
+@media only screen and (min-width: 120.063em) { 
+}

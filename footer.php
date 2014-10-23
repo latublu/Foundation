@@ -13,19 +13,31 @@
 <!-- End Page -->
 
 <!-- Footer -->
+
 <footer class="row">
-
-<?php if ( dynamic_sidebar('Sidebar Footer One') + dynamic_sidebar('Sidebar Footer Two') + dynamic_sidebar('Sidebar Footer Three') + dynamic_sidebar('Sidebar Footer Four')  ) : else : ?>
-
-<div class="large-12 medium-12 columns">
-	<ul class="inline-list">
-	<?php wp_list_pages('title_li='); ?>
-	</ul>
-</div>
-
-<?php endif; ?>
+	
+	<div class="medium-12 columns">
+	
+		<div id="footer-content" class="row">
+		
+			<div class="small-12 medium-9 columns">
+		
+				<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'menu_class' => 'menu footer', 'container' => 'div', 'container_class' => 'container footer clearfix', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) ); ?>
+				
+			</div>
+	
+			<div class="small-12 medium-3 columns copyright text-right">
+				<p>
+					Copyright &copy; <?php echo date('Y'); ?> <br />
+					All rights reserved.
+				</p>
+			</div>
+		
+		</div>
+	</div><!-- footer-content -->
 
 </footer>
+
 <!-- End Footer -->
 
 <?php wp_footer(); ?>

@@ -79,7 +79,8 @@ function foundation_assets() {
 		
 		// Load Stylesheets
 		wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css' );
-		wp_enqueue_style( 'foundation', get_template_directory_uri().'/css/foundation.min.css' );
+		//wp_enqueue_style( 'foundation', get_template_directory_uri().'/css/foundation.min.css' );
+		wp_enqueue_style( 'foundation', get_template_directory_uri().'/css/foundation.css' );
 		wp_enqueue_style( 'style', get_stylesheet_uri(), array('foundation') );
 		wp_enqueue_style( 'app', get_template_directory_uri().'/css/app.css' );
 
@@ -137,7 +138,9 @@ function foundation_menus() {
 
 	register_nav_menus(
 		array(
-			'header-menu' => __( 'Header Menu', 'foundation' )
+			'header-menu' => __( 'Header Menu', 'foundation' ),
+			'top-nav-menu' => __( 'Top Nav Menu', 'foundation' ),
+			'footer-menu' => __( 'Footer Menu', 'foundation' )
 		)
 	);
 	
@@ -153,7 +156,7 @@ function foundation_page_menu() {
 
 	$args = array(
 	'sort_column' => 'menu_order, post_title',
-	'menu_class'  => 'large-12 columns',
+	'menu_class'  => 'large-12 columns page-menu inline-container',
 	'include'     => '',
 	'exclude'     => '',
 	'echo'        => true,
@@ -243,51 +246,7 @@ function foundation_widgets() {
 			'after_title' => '</h5>',
 		) );
 
-	// Sidebar Footer Column One
-	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_one',
-			'name' => __( 'Sidebar Footer One', 'foundation' ),
-			'description' => __( 'This sidebar is located in column one of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="large-3 columns">',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
-
-	// Sidebar Footer Column Two
-	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_two',
-			'name' => __( 'Sidebar Footer Two', 'foundation' ),
-			'description' => __( 'This sidebar is located in column two of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="large-3 columns">',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
-
-	// Sidebar Footer Column Three
-	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_three',
-			'name' => __( 'Sidebar Footer Three', 'foundation' ),
-			'description' => __( 'This sidebar is located in column three of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="large-3 columns">',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
-
-	// Sidebar Footer Column Four
-	register_sidebar( array(
-			'id' => 'foundation_sidebar_footer_four',
-			'name' => __( 'Sidebar Footer Four', 'foundation' ),
-			'description' => __( 'This sidebar is located in column four of your theme footer.', 'foundation' ),
-			'before_widget' => '<div class="large-3 columns">',
-			'after_widget' => '</div>',
-			'before_title' => '<h5>',
-			'after_title' => '</h5>',
-		) );
-
-	}
+}
 
 add_action( 'widgets_init', 'foundation_widgets' );
 
