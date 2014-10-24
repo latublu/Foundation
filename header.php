@@ -10,26 +10,58 @@
  */
 ?>
 
+<?php
+if ( defined('FOUNDATION_HIDE_ADMIN_BAR') && (FOUNDATION_HIDE_ADMIN_BAR == true) ) 
+{
+	show_admin_bar( false );
+} 
+?>
+
 <!DOCTYPE html>
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-<!-- Set the viewport width to device width for mobile -->
-<meta name="viewport" content="width=device-width" />
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
 
-<title><?php wp_title(); ?></title>
+	<title><?php wp_title(); ?></title>
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
+
+	<?php
+	if ( defined('FOUNDATION_HIDE_ADMIN_BAR') && (FOUNDATION_HIDE_ADMIN_BAR == true) ) 
+	{
+	?>
+	<style type="text/css" media="screen">
+		html { margin-top: 0 !important; }
+		* html body { margin-top: 0 !important; }
+		@media screen and ( max-width: 782px ) {
+			html { margin-top: 0 !important; }
+			* html body { margin-top: 0 !important; }
+		}
+	</style>
+	<?php
+	}
+	?>
 
 </head>
 
 <body <?php body_class(); ?>>
+
+	<?php
+	if ( current_user_can( 'edit_posts' ) && defined('FOUNDATION_SHOW_FQV_SNIPPET') && (FOUNDATION_SHOW_FQV_SNIPPET == true) ) 
+	{
+	?>
+		<div id="fqv" style="position:fixed;top:4px;left:4px;z-index:999;color:#fff; opacity: 0.3;"><p style="font-size:12px;background:rgba(0,0,0,0.75);padding:5px;margin-bottom:1px;line-height:1.2;"><span class="left">device:</span> <span style="font-weight:bold;" class="show-for-xlarge">extra large</span><span style="font-weight:bold;" class="show-for-large">large</span><span style="font-weight:bold;" class="show-for-medium">medium</span><span style="font-weight:bold;" class="show-for-small">small</span><span style="font-weight:bold;" class="show-for-landscape">landscape</span><span style="font-weight:bold;" class="show-for-portrait">portrait</span><span style="font-weight:bold;" class="show-for-touch">touch</span></p></div>
+	<?php
+	}
+	?>
 					
 	<?php
 	include get_template_directory().'/snippets/top-banner.php';
